@@ -11,15 +11,23 @@ export default defineNuxtConfig({
   srcDir: 'src/',
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', [
-    '@nuxtjs/google-fonts',
-    {
-      Inter: '200..700',
-      preload: true,
-    },
-  ], 'nuxt-swiper'],
+  experimental: {
+    payloadExtraction: false,
+  },
+  modules: [
+    '@nuxt/eslint',
+    [
+      '@nuxtjs/google-fonts',
+      {
+        Inter: '200..700',
+        preload: true,
+      },
+    ],
+    'nuxt-swiper',
+  ],
   css: ['~/styles/index.scss'],
   nitro: {
+    static: true,
     prerender: {
       ignore: [/^(?!\/profile(\/.*)?$).*/],
       routes: [...profiles],
