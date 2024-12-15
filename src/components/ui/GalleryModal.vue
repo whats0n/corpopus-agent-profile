@@ -1,24 +1,23 @@
 <template>
   <Teleport to="body">
     <Transition name="fade">
-      <div v-if="isOpened" :class="$style.container">
+      <div v-show="isOpened" :class="$style.container">
         <button type="button" :class="$style.close" @click="isOpened = false">
           <UiIcon name="close" />
         </button>
-        <ClientOnly>
-          <swiper-container ref="containerRef" :class="$style.slider">
-            <swiper-slide
-              v-for="(image, index) in images"
-              :key="index"
-              :class="$style.slide"
-            >
-              <img :src="image.src" :alt="image.alt" />
-            </swiper-slide>
-          </swiper-container>
-        </ClientOnly>
+        <swiper-container ref="containerRef" :class="$style.slider">
+          <swiper-slide
+            v-for="(image, index) in images"
+            :key="index"
+            :class="$style.slide"
+          >
+            <img :src="image.src" :alt="image.alt" />
+          </swiper-slide>
+        </swiper-container>
         <button
           type="button"
           :class="[$style.control, $style.prev]"
+          :disabled="!allow.prev"
           @click="swiper.prev()"
         >
           <UiIcon name="chevron-left" />
@@ -26,6 +25,7 @@
         <button
           type="button"
           :class="[$style.control, $style.next]"
+          :disabled="!allow.next"
           @click="swiper.next()"
         >
           <UiIcon name="chevron-right" />
@@ -36,15 +36,30 @@
 </template>
 
 <script lang="ts" setup>
-defineProps<{ images: { src: string; alt?: string }[] }>()
+const props = defineProps<{ images: { src: string; alt?: string }[] }>()
 
 const isOpened = defineModel<boolean>({ required: true })
 
 useLockBody(isOpened)
 
+const allow = reactive<{
+  prev: boolean
+  next: boolean
+}>({
+  prev: false,
+  next: true,
+})
+
 const containerRef = ref(null)
 
-const swiper = useSwiper(containerRef, { loop: true })
+const swiper = useSwiper(containerRef, { loop: false })
+
+onMounted(() => {
+  swiper.instance.value?.on('slideChange', (swiper) => {
+    allow.prev = swiper.activeIndex > 0
+    allow.next = swiper.activeIndex < props.images.length - 1
+  })
+})
 </script>
 
 <style lang="scss" module>
@@ -85,6 +100,11 @@ const swiper = useSwiper(containerRef, { loop: true })
   width: var(--control-size);
   color: #fff;
   background: none;
+
+  &:disabled {
+    cursor: not-allowed;
+    color: var(--gray-500);
+  }
 
   svg {
     width: 24px;

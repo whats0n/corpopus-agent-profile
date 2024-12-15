@@ -3,26 +3,41 @@
     <ProfileGallery v-if="data.gallery" :images="data.gallery" />
     <div :class="['container', $style.main]">
       <div :class="$style.content">
-        <ProfileBio v-if="data.bio" v-bind="data.bio" :class="$style.bio" />
+        <ProfileBio v-if="data.bio" v-bind="data.bio" :class="$style.left" />
         <ProfileSpecialization
           v-if="data.specialization"
           v-bind="data.specialization"
-          :class="$style.specialization"
+          :class="$style.left"
         />
         <ProfileExpertise
           v-if="data.expertise"
           v-bind="data.expertise"
-          :class="$style.expertise"
+          :class="$style.left"
         />
         <ProfileChecklist
           v-if="data.checklist"
           v-bind="data.checklist"
-          :class="$style.checklist"
+          :class="$style.left"
         />
         <ProfileCostRange
           v-if="data.costRange"
           v-bind="data.costRange"
-          :class="$style.costRange"
+          :class="$style.right"
+        />
+        <ProfileTestimonials
+          v-if="data.testimonials"
+          v-bind="data.testimonials"
+          :class="$style.wide"
+        />
+        <ProfileServiceArea
+          v-if="data.serviceArea"
+          v-bind="data.serviceArea"
+          :class="$style.wide"
+        />
+        <ProfileContacts
+          v-if="data.contacts"
+          v-bind="data.contacts"
+          :class="$style.wide"
         />
       </div>
     </div>
@@ -68,16 +83,15 @@ const { data } = await useLazyAsyncData<ProfileContent>(
   }
 }
 
-.bio,
-.specialization,
-.expertise,
-.checklist {
+.left {
   @include helpers.media(md) {
     grid-column: 1;
   }
 }
 
-.costRange {
-  align-self: flex-start;
+.wide {
+  @include helpers.media(md) {
+    grid-column: 1 / 3;
+  }
 }
 </style>

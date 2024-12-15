@@ -25,7 +25,7 @@ export default defineNuxtConfig({
     ],
     'nuxt-swiper',
   ],
-  css: ['~/styles/index.scss'],
+  css: ['~/styles/index.scss', 'leaflet/dist/leaflet.css'],
   nitro: {
     static: true,
     prerender: {

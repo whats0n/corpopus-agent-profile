@@ -10,7 +10,9 @@
         Show all photos
       </button>
     </div>
-    <UiGalleryModal v-model="isOpened" :images="images" />
+    <ClientOnly>
+      <UiGalleryModal v-model="isOpened" :images="images" />
+    </ClientOnly>
 
     <!-- mobile -->
     <div :class="$style.gallery">
@@ -39,7 +41,7 @@ const isOpened = ref<boolean>(false)
 const containerRef = ref(null)
 
 useSwiper(containerRef, {
-  loop: true,
+  loop: false,
   pagination: {
     type: 'fraction',
     renderFraction(currentClass, totalClass) {

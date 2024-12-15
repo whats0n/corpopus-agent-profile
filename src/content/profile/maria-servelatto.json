@@ -120,22 +120,149 @@
       "title": "Recurring Cleaning",
       "items": [
         {
-          "title": "1000 sq. ft.",
+          "title": "1100 sq. ft.",
           "value": "$280-$430"
         },
         {
-          "title": "2000 sq. ft.",
+          "title": "2200 sq. ft.",
           "value": "$380-$660"
         },
         {
-          "title": "3000 sq. ft.",
+          "title": "3300 sq. ft.",
           "value": "$450-$1300"
         },
         {
-          "title": "4000 sq. ft.",
+          "title": "4400 sq. ft.",
           "value": "$580-$1600"
         }
       ]
+    }
+  },
+  "testimonials": {
+    "title": "4.6 · 94 reviews",
+    "metrics": [
+      {
+        "name": "Cleanliness",
+        "value": "4.8"
+      },
+      {
+        "name": "Accuracy",
+        "value": "5.0"
+      },
+      {
+        "name": "Punctuality",
+        "value": "5.0"
+      },
+      {
+        "name": "Communication",
+        "value": "4.9"
+      },
+      {
+        "name": "Value",
+        "value": "4.6"
+      }
+    ],
+    "cards": [
+      {
+        "avatar": "/images/sienna-hewitt.jpg",
+        "name": "Sienna Hewitt",
+        "address": "Seattle, WA",
+        "comment": "\"Maria S. transformed our home with her incredible attention to detail. Her cleaning service has given us back countless hours while maintaining exceptional standards.\"",
+        "stars": 5
+      },
+      {
+        "avatar": "/images/kari-rasmussen.jpg",
+        "name": "Kari Rasmussen",
+        "address": "Bellevue, WA",
+        "comment": "Working with Maria has been a game-changer for our household. She's reliable, thorough, and makes every corner of our home sparkle with perfection.",
+        "stars": 5
+      },
+      {
+        "avatar": "/images/amélie-laurent.jpg",
+        "name": "Amélie Laurent",
+        "address": "Kirkland, WA",
+        "comment": "Her professional approach to house cleaning is unmatched. Maria S. brings expertise and dedication that has made our living space consistently immaculate.",
+        "stars": 5
+      },
+      {
+        "avatar": "/images/aliah-lane.jpg",
+        "name": "Aliah Lane",
+        "address": "Seattle, WA",
+        "comment": "We've tried several cleaning services before, but Maria S. stands out. Her work ethic and commitment to excellence make her an invaluable part of our routine.",
+        "stars": 5
+      },
+      {
+        "avatar": "/images/eduard-franz.jpg",
+        "name": "Eduard Franz",
+        "address": "Everett, WA",
+        "comment": "Having Maria clean our home has been life-changing. She's trustworthy, efficient, and delivers results that exceed our expectations every single time.",
+        "stars": 5
+      },
+      {
+        "avatar": "/images/lily-rose-chedjou.jpg",
+        "name": "Lily-Rose Chedjou",
+        "address": "Auburn, WA",
+        "comment": "The level of cleanliness Maria achieves is remarkable. She's transformed our living space into a spotless sanctuary that we're always proud to come home to.",
+        "stars": 5
+      },
+      {
+        "avatar": "/images/sienna-hewitt.jpg",
+        "name": "Sienna Hewitt Copy",
+        "address": "Seattle, WA",
+        "comment": "\"Maria S. transformed our home with her incredible attention to detail. Her cleaning service has given us back countless hours while maintaining exceptional standards.\"",
+        "stars": 3
+      },
+      {
+        "avatar": "/images/kari-rasmussen.jpg",
+        "name": "Kari Rasmussen Copy",
+        "address": "Bellevue, WA",
+        "comment": "Working with Maria has been a game-changer for our household. She's reliable, thorough, and makes every corner of our home sparkle with perfection.",
+        "stars": 4
+      },
+      {
+        "avatar": "/images/amélie-laurent.jpg",
+        "name": "Amélie Laurent Copy",
+        "address": "Kirkland, WA",
+        "comment": "Her professional approach to house cleaning is unmatched. Maria S. brings expertise and dedication that has made our living space consistently immaculate.",
+        "stars": 2
+      },
+      {
+        "avatar": "/images/aliah-lane.jpg",
+        "name": "Aliah Lane Copy",
+        "address": "Seattle, WA",
+        "comment": "We've tried several cleaning services before, but Maria S. stands out. Her work ethic and commitment to excellence make her an invaluable part of our routine.",
+        "stars": 1
+      }
+    ]
+  },
+  "serviceArea": {
+    "title": "Service area",
+    "description": "Seattle, Bellevue, Edmonds, Redmond, Woodinville, Snoqualmie, Issaquah, Mercer Island, Renton and a few more.",
+    "center": [47.6062, -122.3321],
+    "zoom": 10
+  },
+  "contacts": {
+    "title": "Meet your dedicated support",
+    "meta": "Client care specialist for Maria",
+    "avatar": "/images/james.jpg",
+    "name": "James",
+    "position": "Customer service hero",
+    "description": "Customer service heroes are exceptional professionals committed to delivering outstanding support and seamless experiences to homeowners seeking top-notch home cleaning services.",
+    "chat": {
+      "title": "Chat",
+      "text": "We’re here to help.",
+      "link": {
+        "href": "/",
+        "text": "Start live chat"
+      }
+    },
+    "call": {
+      "title": "Call",
+      "text": "Mon-Fri / 8am to 5pm.",
+      "link": {
+        "href": "tel:+14258005551",
+        "text": "+1 (425) 800-5551"
+      }
     }
   }
 }
