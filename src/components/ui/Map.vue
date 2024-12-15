@@ -1,5 +1,7 @@
 <template>
-  <div :id="id" :class="$style.container" />
+  <div :class="$style.wrapper">
+    <div :id="id" :class="$style.container" />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -34,6 +36,11 @@ onBeforeUnmount(() => {
 </script>
 
 <style lang="scss" module>
+.wrapper {
+  position: relative;
+  z-index: 1;
+}
+
 .container {
   width: var(--map-width, 100%);
   height: var(--map-height, 600px);

@@ -24,8 +24,12 @@ export default defineNuxtConfig({
       },
     ],
     'nuxt-swiper',
+    'dayjs-nuxt',
   ],
   css: ['~/styles/index.scss', 'leaflet/dist/leaflet.css'],
+  appConfig: {
+    quoteUrl: 'https://quote.purehousecleaning.com/',
+  },
   nitro: {
     static: true,
     prerender: {

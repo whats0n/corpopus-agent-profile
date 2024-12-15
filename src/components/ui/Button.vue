@@ -1,13 +1,23 @@
 <template>
-  <button type="button" :class="$style.button" @click="$emit('click')">
+  <button
+    type="button"
+    :class="[$style.button, $style[`ui-${ui}`]]"
+    @click="$emit('click')"
+  >
     {{ text }}
   </button>
 </template>
 
 <script lang="ts" setup>
-defineProps<{
-  text: string
-}>()
+withDefaults(
+  defineProps<{
+    ui?: 'primary' | 'default'
+    text: string
+  }>(),
+  {
+    ui: 'default',
+  },
+)
 
 defineEmits<{
   (e: 'click'): void
@@ -21,8 +31,6 @@ defineEmits<{
   padding-inline: 24px;
   border-radius: 8px;
   height: 48px;
-  color: var(--navy-blue);
-  background: #fff;
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05),
     inset 0px 0px 0px 1px rgba(10, 13, 18, 0.18),
     inset 0px -2px 0px rgba(10, 13, 18, 0.05);
@@ -30,10 +38,33 @@ defineEmits<{
   font-weight: 600;
   line-height: normal;
   transition: color 0.2s, background-color 0.2s;
+}
 
-  @include helpers.hover {
-    color: #fff;
-    background-color: var(--navy-blue);
+.ui-default {
+  color: var(--navy-blue);
+  background: #fff;
+
+  &:enabled {
+    @include helpers.hover {
+      color: #fff;
+      background-color: var(--navy-blue);
+    }
+  }
+}
+
+.ui-primary {
+  color: #fff;
+  background: var(--vibrant-teal);
+
+  &:disabled {
+    opacity: 0.5;
+  }
+
+  &:enabled {
+    @include helpers.hover {
+      color: var(--vibrant-teal);
+      background-color: #fff;
+    }
   }
 }
 </style>

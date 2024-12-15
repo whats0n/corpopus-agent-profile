@@ -19,25 +19,26 @@
           v-bind="data.checklist"
           :class="$style.left"
         />
+        <ProfileCalendar :class="[$style.right, $style.calendar]" />
         <ProfileCostRange
           v-if="data.costRange"
           v-bind="data.costRange"
-          :class="$style.right"
+          :class="[$style.right, $style.costRange]"
         />
         <ProfileTestimonials
           v-if="data.testimonials"
           v-bind="data.testimonials"
-          :class="$style.wide"
+          :class="[$style.wide, $style.testimonials]"
         />
         <ProfileServiceArea
           v-if="data.serviceArea"
           v-bind="data.serviceArea"
-          :class="$style.wide"
+          :class="[$style.wide, $style.serviceArea]"
         />
         <ProfileContacts
           v-if="data.contacts"
           v-bind="data.contacts"
-          :class="$style.wide"
+          :class="[$style.wide, $style.contacts]"
         />
       </div>
     </div>
@@ -92,6 +93,36 @@ const { data } = await useLazyAsyncData<ProfileContent>(
 .wide {
   @include helpers.media(md) {
     grid-column: 1 / 3;
+  }
+}
+
+.costRange {
+  @include helpers.media($to: md) {
+    order: 1;
+  }
+}
+
+.serviceArea {
+  @include helpers.media($to: md) {
+    order: 2;
+  }
+}
+
+.calendar {
+  @include helpers.media($to: md) {
+    order: 3;
+  }
+}
+
+.testimonials {
+  @include helpers.media($to: md) {
+    order: 4;
+  }
+}
+
+.contacts {
+  @include helpers.media($to: md) {
+    order: 5;
   }
 }
 </style>
