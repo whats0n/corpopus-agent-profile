@@ -1,0 +1,141 @@
+{
+  "title": "Maria Servelatto",
+  "gallery": [
+    { "src": "/images/gallery/photo-1.jpg", "alt": "Photo 1" },
+    { "src": "/images/gallery/photo-2.jpg", "alt": "Photo 2" },
+    { "src": "/images/gallery/photo-3.jpg", "alt": "Photo 3" },
+    { "src": "/images/gallery/photo-4.jpg", "alt": "Photo 4" },
+    { "src": "/images/gallery/photo-5.jpg", "alt": "Photo 5" },
+    { "src": "/images/gallery/photo-1.jpg", "alt": "Photo 6" },
+    { "src": "/images/gallery/photo-2.jpg", "alt": "Photo 7" },
+    { "src": "/images/gallery/photo-3.jpg", "alt": "Photo 8" }
+  ],
+  "bio": {
+    "avatar": "/images/maria-servelatto.jpg",
+    "name": "Maria Servelatto",
+    "meta": "Cleaning since: Jan, 2019",
+    "status": "Accepting new clients",
+    "clientsRecommended": "94% clients recommend Maria",
+    "description": "Maria is a highly dependable and professional house cleaner with an exceptionally keen eye for detail and an outstanding work ethic. She consistently delivers top-quality cleaning services, ensuring every corner and surface shines with remarkable attention to detail. Maria excels at following specific cleaning instructions and communicates effectively throughout the entire process, making her a reliable and trustworthy cleaning professional."
+  },
+  "specialization": {
+    "title": "Specializing in",
+    "tags": [
+      "Deep or Spring Cleaning",
+      "Move-In/Out",
+      "Weekly",
+      "Bi-Weekly",
+      "Monthly"
+    ]
+  },
+  "expertise": {
+    "title": "Maria’s expertise",
+    "content": [
+      {
+        "percent": 66,
+        "title": "Homes with dogs",
+        "description": "Maria is a natural around dogs and enjoys making your pet-friendly home sparkle."
+      },
+      {
+        "percent": 54,
+        "title": "Homes with cats",
+        "description": "Cat hair? No problem! Maria’s patience and care make life with cats cleaner and easier."
+      },
+      {
+        "percent": 76,
+        "title": "Homes with children",
+        "description": "From toys to tiny fingerprints, Maria knows how to create safe, clean spaces for kids."
+      }
+    ]
+  },
+  "checklist": {
+    "title": "Cleaning checklist hightlights",
+    "items": [
+      {
+        "icon": "image-user-right",
+        "title": "Inside Windows"
+      },
+      {
+        "icon": "camera-lens",
+        "title": "Inside Fridge"
+      },
+      {
+        "icon": "image-user",
+        "title": "Wipe Baseboards"
+      },
+      {
+        "icon": "image-02",
+        "title": "Inside Oven"
+      },
+      {
+        "icon": "camera-02",
+        "title": "Washer & Dryer Cleaning"
+      },
+      {
+        "icon": "image-user-right",
+        "title": "Second Kitchen"
+      },
+      {
+        "icon": "image-user-right",
+        "title": "Bedsheets & Towels"
+      },
+      {
+        "icon": "image-user-right",
+        "title": "Blind Dusting"
+      },
+      {
+        "icon": "image-user-right",
+        "title": "Inside Cupboard"
+      },
+      {
+        "icon": "image-user-right",
+        "title": "Bed Sheet Change"
+      }
+    ]
+  },
+  "costRange": {
+    "title": "Sample cost range",
+    "leftTab": {
+      "title": "One-Time Cleaning",
+      "items": [
+        {
+          "title": "1000 sq. ft.",
+          "value": "$280-$430"
+        },
+        {
+          "title": "2000 sq. ft.",
+          "value": "$380-$660"
+        },
+        {
+          "title": "3000 sq. ft.",
+          "value": "$450-$1300"
+        },
+        {
+          "title": "4000 sq. ft.",
+          "value": "$580-$1600"
+        }
+      ]
+    },
+    "rightTab": {
+      "title": "Recurring Cleaning",
+      "items": [
+        {
+          "title": "1000 sq. ft.",
+          "value": "$280-$430"
+        },
+        {
+          "title": "2000 sq. ft.",
+          "value": "$380-$660"
+        },
+        {
+          "title": "3000 sq. ft.",
+          "value": "$450-$1300"
+        },
+        {
+          "title": "4000 sq. ft.",
+          "value": "$580-$1600"
+        }
+      ]
+    }
+  }
+}
