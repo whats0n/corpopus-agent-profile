@@ -1,7 +1,12 @@
 <template>
   <div :class="$style.calendar">
     <div :class="$style.header">
-      <button type="button" :class="$style.nav" @click="$emit('prev')">
+      <button
+        type="button"
+        aria-label="Show previous month"
+        :class="$style.nav"
+        @click="$emit('prev')"
+      >
         <UiIcon name="chevron-left" />
       </button>
       <div :class="$style.date">
@@ -12,7 +17,12 @@
           {{ currentYear }}
         </button>
       </div>
-      <button type="button" :class="$style.nav" @click="$emit('next')">
+      <button
+        type="button"
+        aria-label="Show next month"
+        :class="$style.nav"
+        @click="$emit('next')"
+      >
         <UiIcon name="chevron-right" />
       </button>
     </div>

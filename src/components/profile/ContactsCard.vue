@@ -1,9 +1,9 @@
 <template>
   <div :class="$style.container">
     <UiIcon :name="icon" :class="$style.icon" />
-    <h4 v-if="title" :class="$style.title">
+    <h3 v-if="title" :class="$style.title">
       {{ title }}
-    </h4>
+    </h3>
     <p v-if="text" :class="$style.text">
       {{ text }}
     </p>

@@ -11,9 +11,9 @@
           </div>
           {{ item.percent }}%
         </div>
-        <h4 :class="$style.subtitle">
+        <h3 :class="$style.subtitle">
           {{ item.title }}
-        </h4>
+        </h3>
         <p>
           {{ item.description }}
         </p>

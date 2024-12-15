@@ -54,6 +54,16 @@ const { data } = await useLazyAsyncData<ProfileContent>(
   `profile-${route.params.slug}`,
   () => $fetch(`/api/profile/${route.params.slug}`),
 )
+
+useHead({
+  title: computed(() => `Profile - ${data.value?.seo?.title}`),
+  meta: computed(() => [
+    {
+      name: 'description',
+      content: data.value?.seo?.description,
+    },
+  ]),
+})
 </script>
 
 <style lang="scss" module>

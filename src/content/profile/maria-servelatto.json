@@ -1,5 +1,8 @@
 {
-  "title": "Maria Servelatto",
+  "seo": {
+    "title": "Maria Servelatto",
+    "description": "Super cleaning"
+  },
   "gallery": [
     { "src": "/images/gallery/photo-1.jpg", "alt": "Photo 1" },
     { "src": "/images/gallery/photo-2.jpg", "alt": "Photo 2" },
@@ -178,7 +181,7 @@
         "stars": 5
       },
       {
-        "avatar": "/images/amélie-laurent.jpg",
+        "avatar": "/images/amelie-laurent.jpg",
         "name": "Amélie Laurent",
         "address": "Kirkland, WA",
         "comment": "Her professional approach to house cleaning is unmatched. Maria S. brings expertise and dedication that has made our living space consistently immaculate.",
@@ -220,7 +223,7 @@
         "stars": 4
       },
       {
-        "avatar": "/images/amélie-laurent.jpg",
+        "avatar": "/images/amelie-laurent.jpg",
         "name": "Amélie Laurent Copy",
         "address": "Kirkland, WA",
         "comment": "Her professional approach to house cleaning is unmatched. Maria S. brings expertise and dedication that has made our living space consistently immaculate.",

@@ -1,7 +1,7 @@
 <template>
   <div :class="$style.container">
     <header :class="$style.header">
-      <img src="/images/logo.svg" :class="$style.logo" />
+      <img src="/images/logo.svg" alt="TrustedFew" :class="$style.logo" />
     </header>
     <slot />
     <footer :class="$style.footer">

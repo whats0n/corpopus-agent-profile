@@ -9,6 +9,10 @@ import type { ProfileSpecialization } from './specialization'
 import type { ProfileTestimonials } from './testimonials'
 
 export interface ProfileContent {
+  seo: {
+    title: string
+    description: string
+  }
   gallery?: ProfileGallery[]
   bio?: ProfileBio
   specialization?: ProfileSpecialization

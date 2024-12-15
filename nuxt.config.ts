@@ -27,6 +27,13 @@ export default defineNuxtConfig({
     'dayjs-nuxt',
   ],
   css: ['~/styles/index.scss', 'leaflet/dist/leaflet.css'],
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en',
+      },
+    },
+  },
   appConfig: {
     quoteUrl: 'https://quote.purehousecleaning.com/',
   },
