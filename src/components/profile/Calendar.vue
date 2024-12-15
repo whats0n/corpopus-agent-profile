@@ -5,7 +5,12 @@
       Receive accurate pricing for your unique home in less than 3 minutes.
     </p>
     <div :class="$style.datepicker">
-      <UiDateTimePicker v-model="date" no-weekends :min-date="new Date()">
+      <UiDateTimePicker
+        v-model="date"
+        no-weekends
+        :min-date="new Date()"
+        @update:model-value="openQuote"
+      >
         <template #header>
           <div :class="$style.header">
             <h3 :class="$style.subtitle">Pick a preferred date</h3>
@@ -17,12 +22,7 @@
         </template>
         <template #footer>
           <div :class="$style.footer">
-            <UiButton
-              ui="primary"
-              text="Get your custom quote"
-              :disabled="!date"
-              @click="openQuote"
-            />
+            <UiButton ui="primary" text="Get your custom quote" />
           </div>
         </template>
       </UiDateTimePicker>
