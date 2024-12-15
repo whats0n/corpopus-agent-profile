@@ -3,6 +3,12 @@
     <ProfileGallery v-if="data.gallery" :images="data.gallery" />
     <div :class="['container', $style.main]">
       <div :class="$style.content">
+        <ProfileCalendar :class="[$style.right, $style.calendar]" />
+        <ProfileCostRange
+          v-if="data.costRange"
+          v-bind="data.costRange"
+          :class="[$style.right, $style.costRange]"
+        />
         <ProfileBio v-if="data.bio" v-bind="data.bio" :class="$style.left" />
         <ProfileSpecialization
           v-if="data.specialization"
@@ -18,12 +24,6 @@
           v-if="data.checklist"
           v-bind="data.checklist"
           :class="$style.left"
-        />
-        <ProfileCalendar :class="[$style.right, $style.calendar]" />
-        <ProfileCostRange
-          v-if="data.costRange"
-          v-bind="data.costRange"
-          :class="[$style.right, $style.costRange]"
         />
         <ProfileTestimonials
           v-if="data.testimonials"
@@ -68,31 +68,41 @@ const { data } = await useLazyAsyncData<ProfileContent>(
 }
 
 .content {
-  display: grid;
-
-  @include helpers.media(sm) {
+  @include helpers.media(sm, md) {
     gap: 48px;
   }
 
-  @include helpers.media(md) {
-    grid-auto-flow: column dense;
-    grid-template-columns: 1fr 400px;
-  }
-
-  @include helpers.media(lg) {
-    column-gap: 112px;
+  @include helpers.media($to: md) {
+    display: grid;
   }
 }
 
-.left {
-  @include helpers.media(md) {
-    grid-column: 1;
+.left,
+.wide {
+  &:not(:last-child) {
+    @include helpers.media(md) {
+      margin-bottom: 48px;
+    }
   }
 }
 
 .wide {
   @include helpers.media(md) {
-    grid-column: 1 / 3;
+    clear: both;
+  }
+}
+
+.right {
+  @include helpers.media(md) {
+    float: right;
+    clear: right;
+    width: 400px;
+    margin-left: 48px;
+    margin-bottom: 48px;
+  }
+
+  @include helpers.media(lg) {
+    margin-left: 112px;
   }
 }
 
