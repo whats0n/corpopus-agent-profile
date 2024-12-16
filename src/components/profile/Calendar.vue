@@ -1,16 +1,11 @@
 <template>
-  <div :class="$style.container">
+  <div ref="containerRef" :class="$style.container">
     <h2 :class="['title-lg', $style.title]">Get your instant quote</h2>
     <p :class="$style.description">
       Receive accurate pricing for your unique home in less than 3 minutes.
     </p>
     <div :class="$style.datepicker">
-      <UiDateTimePicker
-        v-model="date"
-        no-weekends
-        :min-date="new Date()"
-        @update:model-value="openQuote"
-      >
+      <UiDateTimePicker v-model="date" no-weekends :min-date="new Date()">
         <template #header>
           <div :class="$style.header">
             <h3 :class="$style.subtitle">Pick a preferred date</h3>
@@ -22,7 +17,11 @@
         </template>
         <template #footer>
           <div :class="$style.footer">
-            <UiButton ui="primary" text="Get your custom quote" />
+            <UiButton
+              ui="primary"
+              text="Get your custom quote"
+              @click="openQuote"
+            />
           </div>
         </template>
       </UiDateTimePicker>
@@ -36,6 +35,12 @@ const appConfig = useAppConfig()
 const date = ref<Date | null>(null)
 
 const openQuote = (): void => {
+  if (!isInView.value) {
+    containerRef.value?.scrollIntoView({ block: 'start', behavior: 'smooth' })
+
+    return
+  }
+
   if (!date.value) return
 
   const url = new URL(appConfig.quoteUrl)
@@ -51,6 +56,30 @@ const openQuote = (): void => {
 
   window.open(url, '_blank')
 }
+
+const containerRef = ref<HTMLElement | null>(null)
+
+const isInView = ref<boolean>(false)
+
+let observer: IntersectionObserver | null = null
+
+onMounted(async () => {
+  await nextTick()
+
+  if (!containerRef.value) return
+
+  observer = new IntersectionObserver((entries) => {
+    isInView.value = entries.some((entry) => entry.intersectionRatio > 0)
+  })
+
+  observer.observe(containerRef.value)
+})
+
+onBeforeMount(() => {
+  if (observer) observer.disconnect()
+
+  observer = null
+})
 </script>
 
 <style lang="scss" module>
