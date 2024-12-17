@@ -19,8 +19,10 @@ export default defineNuxtConfig({
     [
       '@nuxtjs/google-fonts',
       {
-        Inter: '200..700',
         preload: true,
+        families: {
+          Inter: [300, 400, 500, 600, 700, 800, 900],
+        },
       },
     ],
     'nuxt-swiper',
