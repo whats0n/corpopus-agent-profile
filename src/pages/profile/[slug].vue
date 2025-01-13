@@ -30,14 +30,11 @@
           v-bind="data.testimonials"
           :class="[$style.wide, $style.testimonials]"
         />
-        <ProfileServiceArea
-          v-if="data.serviceArea"
-          v-bind="data.serviceArea"
-          :class="[$style.wide, $style.serviceArea]"
-        />
-        <ProfileContacts
-          v-if="data.contacts"
-          v-bind="data.contacts"
+        <SharedServiceArea :class="[$style.wide, $style.serviceArea]" />
+        <SharedContacts
+          :title="data?.contacts?.title || ''"
+          :description="data?.contacts?.description || ''"
+          :support-profile="supportProfile"
           :class="[$style.wide, $style.contacts]"
         />
       </div>
@@ -47,6 +44,7 @@
 
 <script lang="ts" setup>
 import type { ProfileContent } from '~/types/profile'
+import type { SupportProfile } from '~/types/supportProfile'
 
 const route = useRoute()
 
@@ -64,6 +62,14 @@ useHead({
     },
   ]),
 })
+
+const supportProfile: SupportProfile = {
+  avatar: '/images/james.jpg',
+  name: 'James',
+  position: 'Customer service hero',
+  description:
+    'Customer service heroes are exceptional professionals committed to delivering outstanding support and seamless experiences to homeowners seeking top-notch home cleaning services.',
+}
 </script>
 
 <style lang="scss" module>

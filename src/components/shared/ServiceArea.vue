@@ -1,22 +1,15 @@
 <template>
   <div :class="$style.container">
-    <h2 :class="['title-lg', $style.title]">
-      {{ title }}
-    </h2>
+    <h2 :class="['title-lg', $style.title]">Service area</h2>
     <p :class="$style.description">
-      {{ description }}
+      Seattle, Bellevue, Edmonds, Redmond, Woodinville, Snoqualmie, Issaquah,
+      Mercer Island, Renton and a few more.
     </p>
     <ClientOnly>
-      <UiMap v-if="center?.length" :center="center" :zoom="zoom" />
+      <UiMap :center="[47.6062, -122.3321]" :zoom="10" />
     </ClientOnly>
   </div>
 </template>
-
-<script lang="ts" setup>
-import type { ProfileServiceArea } from '~/types/profile/serviceArea'
-
-defineProps<ProfileServiceArea>()
-</script>
 
 <style lang="scss" module>
 .container {

@@ -38,6 +38,9 @@ export default defineNuxtConfig({
   },
   appConfig: {
     quoteUrl: 'https://quote.purehousecleaning.com/',
+    url: {
+      quoteTrustedfew: 'https://quote.trustedfew.com/',
+    },
   },
   nitro: {
     static: true,

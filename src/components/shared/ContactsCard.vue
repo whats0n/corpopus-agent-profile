@@ -14,9 +14,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { ProfileContactsCard } from '~/types/profile/contacts'
+import type { ContactsCard } from '~/types/contacts'
 
-defineProps<Partial<ProfileContactsCard> & { icon: string }>()
+defineProps<Partial<ContactsCard> & { icon: string }>()
 </script>
 
 <style lang="scss" module>

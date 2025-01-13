@@ -238,34 +238,8 @@
       }
     ]
   },
-  "serviceArea": {
-    "title": "Service area",
-    "description": "Seattle, Bellevue, Edmonds, Redmond, Woodinville, Snoqualmie, Issaquah, Mercer Island, Renton and a few more.",
-    "center": [47.6062, -122.3321],
-    "zoom": 10
-  },
   "contacts": {
     "title": "Meet your dedicated support",
-    "meta": "Client care specialist for Maria",
-    "avatar": "/images/james.jpg",
-    "name": "James",
-    "position": "Customer service hero",
-    "description": "Customer service heroes are exceptional professionals committed to delivering outstanding support and seamless experiences to homeowners seeking top-notch home cleaning services.",
-    "chat": {
-      "title": "Chat",
-      "text": "We’re here to help.",
-      "link": {
-        "href": "/",
-        "text": "Start live chat"
-      }
-    },
-    "call": {
-      "title": "Call",
-      "text": "Mon-Fri / 8am to 5pm.",
-      "link": {
-        "href": "tel:+14258005551",
-        "text": "+1 (425) 800-5551"
-      }
-    }
+    "description": "Client care specialist for Maria"
   }
 }

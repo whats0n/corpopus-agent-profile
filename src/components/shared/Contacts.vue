@@ -5,37 +5,53 @@
         {{ title }}
       </h2>
       <p :class="$style.meta">
-        {{ meta }}
-      </p>
-      <UiMiniProfile
-        :avatar="avatar"
-        :name="name"
-        :meta="position"
-        :class="$style.profile"
-      />
-      <p :class="$style.description">
         {{ description }}
       </p>
+      <template v-if="supportProfile">
+        <UiMiniProfile
+          :avatar="supportProfile.avatar"
+          :name="supportProfile.name"
+          :meta="supportProfile.position"
+          :class="$style.profile"
+        />
+        <p :class="$style.description">
+          {{ supportProfile.description }}
+        </p>
+      </template>
     </div>
-    <ProfileContactsCard
-      icon="message-chat"
-      :title="chat?.title"
-      :text="chat?.text"
-      :link="chat?.link"
-    />
-    <ProfileContactsCard
-      icon="phone"
-      :title="call?.title"
-      :text="call?.text"
-      :link="call?.link"
-    />
+    <SharedContactsCard v-for="item in cards" :key="item.icon" v-bind="item" />
   </div>
 </template>
 
 <script lang="ts" setup>
-import type { ProfileContacts } from '~/types/profile/contacts'
+import type { SupportProfile } from '~/types/supportProfile'
 
-defineProps<ProfileContacts>()
+defineProps<{
+  title?: string
+  description?: string
+  supportProfile?: SupportProfile
+}>()
+
+const cards = [
+  {
+    icon: 'message-chat',
+    title: 'Chat',
+    text: 'We’re here to help.',
+    link: {
+      href: '/',
+      text: 'Start live chat',
+    },
+  },
+  {
+    icon: 'phone',
+    title: 'Call',
+    text: 'Mon-Fri / 8am to 5pm.',
+    link: {
+      href: 'tel:+14258005551',
+      text: '+1 (425) 800-5551',
+    },
+  },
+]
 </script>
 
 <style lang="scss" module>
@@ -85,14 +101,17 @@ defineProps<ProfileContacts>()
 }
 
 .meta {
-  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 20px;
 
   @include helpers.media(sm) {
-    margin-bottom: 16px;
+    font-size: 18px;
+    line-height: 28px;
   }
 }
 
 .profile {
+  margin-top: 20px;
   margin-bottom: 20px;
   --mini-profile-avatar: 56px;
   --mini-profile-gap: 16px;
@@ -100,6 +119,7 @@ defineProps<ProfileContacts>()
   --mini-profile-name-line-height: 1.5;
 
   @include helpers.media(sm) {
+    margin-top: 16px;
     margin-bottom: 16px;
     --mini-profile-avatar: 72px;
     --mini-profile-name-font-size: 18px;

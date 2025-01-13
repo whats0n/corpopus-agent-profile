@@ -84,7 +84,7 @@ const isOpened = ref<boolean>(false)
     border-radius: 50%;
     width: 16px;
     height: 16px;
-    background: #20c997;
+    background: var(--vibrant-teal);
   }
 }
 
