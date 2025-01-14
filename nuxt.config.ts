@@ -45,8 +45,8 @@ export default defineNuxtConfig({
   nitro: {
     static: true,
     prerender: {
-      ignore: [/^(?!\/profile(\/.*)?$).*/],
-      routes: [...profiles],
+      ignore: [/^(?!(\/profile|\/pricing|\/legal)(\/.*)?$).*/],
+      routes: [...profiles, '/pricing', '/legal'],
     },
   },
   vite: {
